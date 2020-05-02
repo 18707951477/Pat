@@ -1,0 +1,84 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Pat1002 {
+	long c=0;
+	int t=0;
+	char[] u;
+	int[] y;
+	//求和
+	/*public long Num(long b) {
+		while(b>9){
+			long m=b%10;
+			c+=m;
+			b/=10;	
+		}
+		return b+c;
+	}*/
+	//转换
+	public void Read(int w) {
+		int r=w;
+		ArrayList<String> al = new ArrayList<String>();
+		while(r>9){
+			int h=r%10;
+			 
+			int ii = (int)h;
+			switch(ii)
+			{
+			case 0:al.add("ling");break;
+			case 1:al.add("yi");break;
+			case 2:al.add("er");break;
+			case 3:al.add("san");break;
+			case 4:al.add("si");break;
+			case 5:al.add("wu");break;
+			case 6:al.add("liu");break;
+			case 7:al.add("qi");break;
+			case 8:al.add("ba");break;
+			case 9:al.add("jiu");break;
+			default:break;			
+			}		
+			r/=10;
+			//System.out.println("h的数值是"+h);
+			//System.out.println("r的数值是"+r);
+			t++;
+		}
+		int rb=(int)r;
+		//System.out.println("r的数值是"+r);   
+		switch(rb)
+		{
+		case 0:al.add("ling");break;
+		case 1:al.add("yi");break;
+		case 2:al.add("er");break;
+		case 3:al.add("san");break;
+		case 4:al.add("si");break;
+		case 5:al.add("wu");break;
+		case 6:al.add("liu");break;
+		case 7:al.add("qi");break;
+		case 8:al.add("ba");break;
+		case 9:al.add("jiu");break;
+		default:break;			
+		}
+		for (int i = al.size(); i >0 ; i--) {
+            System.out.print(al.get(i-1));
+            if((i-1)!=0) {
+            	System.out.print(" ");
+            }
+            else 
+            	break;    
+       } 		
+	}	
+	public static void main(String[] args) {
+		int n=0;
+		Scanner s= new Scanner(System.in);	
+		//System.out.println("请输入：");
+		String b=s.next();
+		char a[]=b.toCharArray();
+		for(int i=0;i<a.length;i++) {
+			int v=(int)a[i];
+			//System.out.println("djkfdjkfjdkjfdkjf    "+v);
+			n+=(v-48);	
+		}
+		//System.out.println("n的数值为"+n);
+		new Pat1002().Read(n);	
+	}
+}
